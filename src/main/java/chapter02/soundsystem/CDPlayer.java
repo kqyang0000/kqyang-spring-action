@@ -13,12 +13,12 @@ public class CDPlayer implements MediaPlayer {
     }
 
 
-    /*//效果相同
+    //效果相同
     @Autowired
     public void setCd(CompactDisc cd) {
         this.cd = cd;
     }
-
+    /*
     @Autowired
     public void insertDisc(CompactDisc cd) {
         this.cd = cd;

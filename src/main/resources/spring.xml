@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="compactDisc" class="chapter02.soundsystem.SgtPeppers"/>
+
+    <bean id="cdPlayer" class="chapter02.soundsystem.CDPlayer" c:cd-ref="compactDisc" p:cd-ref="compactDisc">
+        <!-- c命名空间代替 -->
+        <!--<constructor-arg ref="compactDisc"/>-->
+        <!-- setter属性注入 -->
+        <!--<property name="cd" ref="compactDisc"/>-->
+    </bean>
+
+    <bean id="blackDisc" class="chapter02.soundsystem.BlackDisc" c:_0="title" c:_1="artist">
+        <constructor-arg value="title"/>
+        <constructor-arg value="artist"/>
+        <constructor-arg>
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
